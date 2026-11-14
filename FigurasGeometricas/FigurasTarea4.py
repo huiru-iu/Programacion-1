@@ -2,7 +2,7 @@
 # Descripción: Programa en Python que imprime las siguientes figuras rellenas y huecas: un reloj de arena, un rombo, un moño y una copa.
 # Autor: Chen Huiru, Romo Morales Abril Yaneth
 # Fecha: 03/11/2026
-
+#Programa que imprime figuras geometricas.
 def hacer_linea(ancho: int, simbolo: str, tipo: int, completa: bool = False) -> str:
     """
     Construye una línea de la figura.

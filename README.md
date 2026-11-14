@@ -20,3 +20,4 @@ Algoritmo que calcule el índice de masa corporal (IMC) de una persona adulta de
 
 ###OperacionRescate.psc
 Algoritmo que solicite la cantidad de estudiantes a analizar. Para cada estudiante, capture las calificaciones obtenidas en los tres primeros exámenes.
+

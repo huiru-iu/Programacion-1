@@ -1,14 +1,15 @@
 // Titulo: curp_16.psc
-// Descripción: Algoritmo que captura la información del user y genera los 16 caracteres de la curp
+// Descripciï¿½n: Algoritmo que captura la informaciï¿½n del user y genera los 16 caracteres de la curp
 // Autores: Huiru Chen, Abril Yaneth Romo Morales
 // Fecha: 11/10/2026
+#Obtener los datos del usuario para conocer los 16 caracteres del CURP del usuario.
 Proceso curp_16
 	Escribir "Algoritmo que genera 16 caracteres de la curp"
 	
 	Definir nombre, paterno, materno, s, entidad Como Caracter
 	Definir dia, mes, anio Como Entero
 	
-	// Función 1
+	// Funciï¿½n 1
 	Escribir "Escribe los datos tal como aparecen en tu acta de nacimiento."
 	Escribir Sin Saltar "Nombre(s): "
 	Leer nombre
@@ -17,27 +18,27 @@ Proceso curp_16
 	Escribir Sin Saltar "Segundo apellido (deja vacio si no tienes): "
 	Leer materno
 	
-	// Función 2
-	Escribir Sin Saltar "Día de nacimiento (1-31): "
+	// Funciï¿½n 2
+	Escribir Sin Saltar "Dï¿½a de nacimiento (1-31): "
 	Leer dia
 	Escribir Sin Saltar "Mes de nacimiento (1-12): "
 	Leer mes
-	Escribir Sin Saltar "Año de nacimiento (<=2026): "
+	Escribir Sin Saltar "Aï¿½o de nacimiento (<=2026): "
 	Leer anio
 	
-	// Sin función
+	// Sin funciï¿½n
 	Repetir
 		Escribir Sin Saltar "Sexo M (mujer), H (Hombre): "
 		Leer s
-		// Convertimos a mayúsculas por si el usuario escribe minúscula (m o h)
+		// Convertimos a mayï¿½sculas por si el usuario escribe minï¿½scula (m o h)
 		s <- Mayusculas(s)
 		
 		Si s <> "M" Y s <> "H" Entonces
-			Escribir "Opción inválida. Por favor, escribe M o H."
+			Escribir "Opciï¿½n invï¿½lida. Por favor, escribe M o H."
 		FinSi
 	Hasta Que s = "M" O s = "H"
 	
-	//Función 3
+	//Funciï¿½n 3
     Escribir Sin Saltar "Ingrese su entidad federativa de nacimiento: "
     Leer entidad
 	
@@ -56,9 +57,9 @@ Funcion resultado <- caracter1a4(nombre, paterno, materno)
 		base <- 1
 	FinSi
 	
-	conAcento <- "áéíóúÁÉÍÓÚüÜñ"
-	sinAcento <- "AEIOUAEIOUUUÑ"
-	alfabeto <- "ABCDEFGHIJKLMNOPQRSTUVWXYZÑ"
+	conAcento <- "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
+	sinAcento <- "AEIOUAEIOUUUï¿½"
+	alfabeto <- "ABCDEFGHIJKLMNOPQRSTUVWXYZï¿½"
 	
 	l1 <- "X"
 	l2 <- "X"
@@ -134,7 +135,7 @@ Funcion resultado <- caracter1a4(nombre, paterno, materno)
 		FinSi
 		
 		// Letra inicial y primera vocal interna
-		// Ñ o caracter especial (/ - .) -> X, sin vocal interna -> X
+		// ï¿½ o caracter especial (/ - .) -> X, sin vocal interna -> X
 		letraIni <- "X"
 		vocal <- "X"
 		Si palabra <> "" Entonces
@@ -304,20 +305,20 @@ Funcion consonantes <- caracter14a16(nombre, paterno, materno)
 	Definir i Como Entero
 	Definir encontrada Como Logico
 	
-	// Convertir a mayúsculas 
+	// Convertir a mayï¿½sculas 
 	nombre <- Mayusculas(nombre)
 	paterno <- Mayusculas(paterno)
 	materno <- Mayusculas(materno)
 	
 	//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-	// Posición 14: Primera consonante interna del apellido paterno
+	// Posiciï¿½n 14: Primera consonante interna del apellido paterno
 	c14 <- "X"
 	encontrada <- Falso
 	i <- 2
 	Mientras i <= Longitud(paterno) Y No encontrada Hacer
 		letra <- Subcadena(paterno, i, i)
-		Si letra = "Ñ" Entonces
-			// La Ñ se remplaza como X
+		Si letra = "ï¿½" Entonces
+			// La ï¿½ se remplaza como X
 			c14 <- "X" 
 			encontrada <- Verdadero
 		SiNo
@@ -331,14 +332,14 @@ Funcion consonantes <- caracter14a16(nombre, paterno, materno)
 	FinMientras
 	
 	// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-	// Posición 15: Primera consonante interna del apellido materno
+	// Posiciï¿½n 15: Primera consonante interna del apellido materno
 	c15 <- "X"
 	Si Longitud(materno) > 0 Entonces
 		encontrada <- Falso
 		i <- 2
 		Mientras i <= Longitud(materno) Y No encontrada Hacer
 			letra <- Subcadena(materno, i, i)
-			Si letra = "Ñ" Entonces
+			Si letra = "ï¿½" Entonces
 				c15 <- "X"
 				encontrada <- Verdadero
 			SiNo
@@ -350,12 +351,12 @@ Funcion consonantes <- caracter14a16(nombre, paterno, materno)
 			i <- i + 1
 		FinMientras
 	Sino
-		// Si solo tiene un apellido, la posición 15 es X
+		// Si solo tiene un apellido, la posiciï¿½n 15 es X
 		c15 <- "X" 
 	FinSi
 	
 	// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-	// Posición 16: Primera consonante interna del nombre
+	// Posiciï¿½n 16: Primera consonante interna del nombre
 	nomLimpio <- nombre
 	
 	// Si el nombre empieza con MARIA o JOSE, nos saltamos el primer nombre
@@ -371,7 +372,7 @@ Funcion consonantes <- caracter14a16(nombre, paterno, materno)
 	i <- 2
 	Mientras i <= Longitud(nomLimpio) Y No encontrada Hacer
 		letra <- Subcadena(nomLimpio, i, i)
-		Si letra = "Ñ" Entonces
+		Si letra = "ï¿½" Entonces
 			c16 <- "X" 
 			encontrada <- Verdadero
 		SiNo
