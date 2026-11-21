@@ -3,6 +3,7 @@
 # Autor:Huiru Chen
 # Fecha: 29/10/2026
 def contraseña(cadena:str) -> bool :
+    #Documentacion de la funcion para entender mejor la funcion.
     """ 
     Indica si una cadena es una contraseña segura.
     

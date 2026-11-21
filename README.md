@@ -210,6 +210,8 @@ Tu contraseña es segura
 Escribir la contraseña: 12345
 La contraseña no es segura
 ```
+# Comprueba que el dato ingresado sea valido
+
 
 ### Índice de masa corporal para adultos
 (`ÍndiceDeMasaCorporalAdulto.psc`)
@@ -267,6 +269,20 @@ Cantidad de estudiantes con posibilidad de obtener un rendimiento regular: 1
 Cantidad de estudiantes que pueden rescatar el semestre: 0
 Cantidad de estudiantes que reprobarán inevitablemente: 0
 ```
+## Cómo ejecutar el programa de figuras
+
+## Ejecución de un programa
+
+### Funciones de contraseña
+
+1. Abre una terminal en la carpeta principal del repositorio.
+2. Ejecuta el programa con:
+
+   ```bash
+   python FuncionContraseña/Funciones_Contraseña.py
+   ```
+
+3. Sigue las instrucciones que aparecen en pantalla.
 
 ## Autor
 Chen Huiru
